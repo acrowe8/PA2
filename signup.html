@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign up as a Teacher — MaestroMatch</title>
+  <meta name="description" content="Create your MaestroMatch teacher profile. List your instruments, styles, and availability to reach students." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container navbar" role="navigation" aria-label="Main">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M5 4v13.5a3.5 3.5 0 1 0 2-3.122V4h-2Zm10 0v9.5a3.5 3.5 0 1 0 2-3.122V4h-2Z" fill="currentColor" />
+          </svg>
+        </span>
+        MaestroMatch
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/index.html#features">Features</a>
+        <a href="/index.html#how-it-works">How it works</a>
+        <a href="/index.html#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost">Help</a>
+        <a href="#" class="btn btn-primary">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <div class="form-shell" role="region" aria-labelledby="signup-title">
+        <div class="stack">
+          <header class="form-title">
+            <h1 id="signup-title">Create your teacher profile</h1>
+            <p class="muted">It only takes a few minutes to get started.</p>
+          </header>
+
+          <form class="stack" action="#" method="post" novalidate>
+            <fieldset class="form-grid cols-2">
+              <legend class="visually-hidden">Basic information</legend>
+              <div class="field">
+                <label for="firstName">First name</label>
+                <input class="input" id="firstName" name="firstName" autocomplete="given-name" required />
+              </div>
+              <div class="field">
+                <label for="lastName">Last name</label>
+                <input class="input" id="lastName" name="lastName" autocomplete="family-name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" required />
+                <p class="help">We’ll send confirmations and lesson requests here.</p>
+              </div>
+              <div class="field">
+                <label for="password">Password</label>
+                <input class="input" id="password" name="password" type="password" autocomplete="new-password" minlength="8" required />
+                <p class="help">Use at least 8 characters.</p>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-grid cols-2">
+              <legend>Teaching details</legend>
+              <div class="field">
+                <label for="instrument">Primary instrument</label>
+                <select class="select" id="instrument" name="instrument" required>
+                  <option value="" disabled selected>Select an instrument</option>
+                  <option>Piano</option>
+                  <option>Guitar</option>
+                  <option>Violin</option>
+                  <option>Voice</option>
+                  <option>Drums</option>
+                  <option>Flute</option>
+                  <option>Cello</option>
+                  <option>Trumpet</option>
+                  <option>Clarinet</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="styles">Styles (select all that apply)</label>
+                <div id="styles" class="checklist" role="group" aria-labelledby="styles-label">
+                  <span id="styles-label" class="visually-hidden">Styles</span>
+                  <label class="control"><input type="checkbox" name="style" value="Classical" /> Classical</label>
+                  <label class="control"><input type="checkbox" name="style" value="Jazz" /> Jazz</label>
+                  <label class="control"><input type="checkbox" name="style" value="Pop" /> Pop</label>
+                  <label class="control"><input type="checkbox" name="style" value="Rock" /> Rock</label>
+                  <label class="control"><input type="checkbox" name="style" value="Folk" /> Folk</label>
+                  <label class="control"><input type="checkbox" name="style" value="Blues" /> Blues</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="rate">Hourly rate (USD)</label>
+                <input class="input" id="rate" name="rate" type="number" min="0" step="1" placeholder="40" required />
+              </div>
+              <div class="field">
+                <label for="format">Lesson format</label>
+                <div id="format" class="inline" role="group" aria-labelledby="format-label">
+                  <span id="format-label" class="visually-hidden">Lesson format</span>
+                  <label class="control"><input type="checkbox" name="format" value="In-person" /> In‑person</label>
+                  <label class="control"><input type="checkbox" name="format" value="Online" /> Online</label>
+                  <label class="control"><input type="checkbox" name="format" value="Hybrid" /> Hybrid</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="timezone">Time zone</label>
+                <select class="select" id="timezone" name="timezone" required>
+                  <option value="" disabled selected>Select your time zone</option>
+                  <option value="America/New_York">America/New_York (ET)</option>
+                  <option value="America/Chicago">America/Chicago (CT)</option>
+                  <option value="America/Denver">America/Denver (MT)</option>
+                  <option value="America/Los_Angeles">America/Los_Angeles (PT)</option>
+                  <option value="Europe/London">Europe/London</option>
+                  <option value="Europe/Berlin">Europe/Berlin</option>
+                  <option value="Asia/Tokyo">Asia/Tokyo</option>
+                  <option value="Australia/Sydney">Australia/Sydney</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="city">City</label>
+                <input class="input" id="city" name="city" autocomplete="address-level2" />
+              </div>
+              <div class="field">
+                <label for="bio">Short bio</label>
+                <textarea class="textarea" id="bio" name="bio" rows="5" placeholder="Share your teaching philosophy, experience, and what students can expect."></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Policies</legend>
+              <label class="control"><input type="checkbox" name="agree" required /> I agree to the terms and privacy policy</label>
+            </fieldset>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Create profile</button>
+              <a class="btn btn-ghost" href="/">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> MaestroMatch</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <style>
+    .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
+  </style>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
