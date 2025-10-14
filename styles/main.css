@@ -132,6 +132,13 @@ a:hover { text-decoration: underline; }
 
 .btn-ghost { background: transparent; border-color: color-mix(in oklab, var(--color-border), var(--color-text) 15%); }
 
+/* Emphasis size for primary CTA */
+.btn-xl {
+  padding: 0.95rem 1.35rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
 /* Hero */
 .hero {
   padding-block: clamp(3rem, 8vw, 6rem);
