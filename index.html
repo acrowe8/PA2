@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MaestroMatch — Music lessons made simple</title>
+  <meta name="description" content="Find your perfect music teacher or share your expertise as an instructor on MaestroMatch." />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container navbar" role="navigation" aria-label="Main">
+      <a class="brand" href="/" aria-label="MaestroMatch home">
+        <span class="brand-mark" aria-hidden="true">🎵</span>
+        MaestroMatch
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost">Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Learn. Teach. Connect.</h1>
+          <p class="muted">
+            MaestroMatch helps students find great teachers and teachers grow their studios.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="./signup.html">Sign up as a Teacher</a>
+            <a class="btn" href="./signup.html?role=student">Sign up as a Student</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section section-compact">
+      <div class="container">
+        <h2 class="text-center">Everything you need to start learning or teaching</h2>
+        <div class="features-grid">
+          <article class="card">
+            <h3>Verified teachers</h3>
+            <p class="muted">Browse experienced instructors across instruments and styles.</p>
+          </article>
+          <article class="card">
+            <h3>Flexible lessons</h3>
+            <p class="muted">Online, in‑person, or hybrid options to fit your schedule.</p>
+          </article>
+          <article class="card">
+            <h3>Simple scheduling</h3>
+            <p class="muted">Coordinate times effortlessly with built‑in requests.</p>
+          </article>
+          <article class="card">
+            <h3>Secure messaging</h3>
+            <p class="muted">Connect safely before your first lesson.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section section-compact">
+      <div class="container steps">
+        <article class="step">
+          <div class="num">1</div>
+          <h4>Create your free account</h4>
+          <p class="muted">Join as a teacher or student in minutes.</p>
+        </article>
+        <article class="step">
+          <div class="num">2</div>
+          <h4>Match and message</h4>
+          <p class="muted">Find the right fit and coordinate details.</p>
+        </article>
+        <article class="step">
+          <div class="num">3</div>
+          <h4>Start lessons</h4>
+          <p class="muted">Grow your skills or your studio with confidence.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-compact">
+      <div class="container">
+        <h2 class="text-center">Frequently asked questions</h2>
+        <div class="stack">
+          <details>
+            <summary>Is MaestroMatch free to join?</summary>
+            <p class="muted">Yes. You can sign up and create a profile at no cost.</p>
+          </details>
+          <details>
+            <summary>Do you offer online lessons?</summary>
+            <p class="muted">Yes. Many teachers offer online, in‑person, or hybrid formats.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> MaestroMatch</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
