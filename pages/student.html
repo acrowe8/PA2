@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Home — MaestroMatch</title>
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container navbar" role="navigation" aria-label="Main">
+      <a class="brand" href="/" aria-label="MaestroMatch home">
+        <span class="brand-mark" aria-hidden="true">🎵</span>
+        MaestroMatch
+      </a>
+      <nav class="nav-links">
+        <a href="#book">Book</a>
+        <a href="#bookings">Bookings</a>
+        <a href="#profile">Profile</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="signOutBtn" class="btn btn-ghost" type="button">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section-compact">
+      <div class="container">
+        <div class="stack">
+          <h1>Welcome, <span id="welcomeName">Student</span></h1>
+          <p class="muted">Book lessons, manage requests, and update your profile.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="section">
+      <div class="container">
+        <div class="form-shell">
+          <div class="stack">
+            <h2 class="form-title">Book a Lesson</h2>
+            <form id="bookingForm" class="form-grid cols-2">
+              <div class="field">
+                <label for="instrument">Instrument</label>
+                <select id="instrument" class="select" required>
+                  <option value="" disabled selected>Select an instrument</option>
+                  <option>Piano</option>
+                  <option>Guitar</option>
+                  <option>Violin</option>
+                  <option>Voice</option>
+                  <option>Drums</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="teacher">Teacher</label>
+                <select id="teacher" class="select" required>
+                  <option value="" disabled selected>Select a teacher</option>
+                  <option value="Ava Thompson">Ava Thompson — Piano</option>
+                  <option value="Liam Chen">Liam Chen — Guitar</option>
+                  <option value="Sophia Patel">Sophia Patel — Violin</option>
+                  <option value="Emma Johnson">Emma Johnson — Voice</option>
+                  <option value="Noah Martinez">Noah Martinez — Drums</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="modality">Modality</label>
+                <select id="modality" class="select" required>
+                  <option>Online</option>
+                  <option>In-person</option>
+                  <option>Hybrid</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="duration">Duration</label>
+                <select id="duration" class="select" required>
+                  <option value="30">30 minutes</option>
+                  <option value="45">45 minutes</option>
+                  <option value="60" selected>60 minutes</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="lessonDate">Date</label>
+                <input id="lessonDate" type="date" class="input" required />
+              </div>
+              <div class="field">
+                <label for="lessonTime">Time</label>
+                <input id="lessonTime" type="time" class="input" required />
+              </div>
+              <div class="field" style="grid-column: 1 / -1;">
+                <label for="notes">Notes for your teacher</label>
+                <textarea id="notes" class="textarea" rows="3" placeholder="What would you like to focus on?"></textarea>
+              </div>
+              <div class="form-actions" style="grid-column: 1 / -1;">
+                <button type="submit" class="btn btn-primary">Request lesson</button>
+              </div>
+            </form>
+            <div id="bookingMessage" class="muted" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bookings" class="section section-compact">
+      <div class="container">
+        <h2 class="text-center">My lesson requests</h2>
+        <div id="bookingsList" class="stack" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="profile" class="section section-compact">
+      <div class="container">
+        <div class="form-shell">
+          <div class="stack">
+            <h2 class="form-title">My profile</h2>
+            <form id="profileForm" class="form-grid cols-2">
+              <div class="field">
+                <label for="profileName">Full name</label>
+                <input id="profileName" type="text" class="input" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label for="profileEmail">Email</label>
+                <input id="profileEmail" type="email" class="input" readonly />
+                <div class="help">Email comes from your sign-in</div>
+              </div>
+              <div class="field">
+                <label for="profileInstrument">Primary instrument</label>
+                <select id="profileInstrument" class="select">
+                  <option value="">Select</option>
+                  <option>Piano</option>
+                  <option>Guitar</option>
+                  <option>Violin</option>
+                  <option>Voice</option>
+                  <option>Drums</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="profileLevel">Level</label>
+                <select id="profileLevel" class="select">
+                  <option value="">Select</option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+              <div class="form-actions" style="grid-column: 1 / -1;">
+                <button type="submit" class="btn btn-primary">Save profile</button>
+              </div>
+            </form>
+            <div id="profileMessage" class="muted" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> MaestroMatch</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../scripts/student.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
