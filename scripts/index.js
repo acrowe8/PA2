@@ -4,6 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   signUpTeacherCta.addEventListener('click', (event) => {
     event.preventDefault();
-    window.location.href = './pages/signin.html';
+    window.location.href = './pages/teacherOrStudent.html';
   });
 });
