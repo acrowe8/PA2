@@ -29,8 +29,7 @@
         <div class="form-shell">
           <div class="stack">
             <h2 class="form-title">Teacher Sign In</h2>
-            <form class="form-grid" onsubmit="event.preventDefault(); alert('Teacher sign-in submitted (stub)');">
-              <div class="field">
+            <form class="form-grid" onsubmit="event.preventDefault(); (function(){ try { localStorage.setItem('currentTeacherEmail', document.getElementById('email').value); } catch(e) {} window.location.href = './teacher.html'; })();">
                 <label for="email">Email</label>
                 <input class="input" id="email" name="email" type="email" required />
               </div>

@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const signOutBtn = document.getElementById('signOutBtn');
-  if (signOutBtn) {
-    signOutBtn.addEventListener('click', () => {
-      try { localStorage.removeItem('currentStudentEmail'); } catch (e) {}
-      window.location.href = './pages/studentSignin.html';
-    });
-  }
-
   const currentEmail = (function () {
     try { return localStorage.getItem('currentStudentEmail') || ''; } catch (e) { return ''; }
   })();
