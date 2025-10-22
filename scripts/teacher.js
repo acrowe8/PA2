@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (signOutBtn) {
     signOutBtn.addEventListener('click', () => {
       try { localStorage.removeItem('currentTeacherEmail'); } catch (e) {}
-      window.location.href = './teachsignin.html';
+      window.location.href = './pages/teachsignin.html';
     });
   }
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // If no auth context, send to sign-in
   if (!currentEmail) {
-    window.location.href = './teachsignin.html';
+    window.location.href = './pages/teachsignin.html';
     return;
   }
 

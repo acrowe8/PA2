@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (signOutBtn) {
     signOutBtn.addEventListener('click', () => {
       try { localStorage.removeItem('currentStudentEmail'); } catch (e) {}
-      window.location.href = './studentSignin.html';
+      window.location.href = './pages/studentSignin.html';
     });
   }
 
