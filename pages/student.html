@@ -102,6 +102,53 @@
       </div>
     </section>
 
+    <section id="checkout" class="section">
+      <div class="container">
+        <div class="form-shell">
+          <div class="stack">
+            <h2 class="form-title">Checkout</h2>
+            <form id="paymentForm" class="form-grid cols-2" novalidate>
+              <div class="field" style="grid-column: 1 / -1;">
+                <div class="help">We'll verify your card before attempting authorization.</div>
+              </div>
+
+              <div class="field">
+                <label for="cardholderName">Cardholder name</label>
+                <input id="cardholderName" type="text" class="input" autocomplete="cc-name" placeholder="Jane Q. Student" required />
+              </div>
+
+              <div class="field">
+                <label for="cardNumber">Card number</label>
+                <input id="cardNumber" type="text" class="input" inputmode="numeric" autocomplete="cc-number" placeholder="4242 4242 4242 4242" maxlength="19" required />
+                <div class="help">Use a test card like 4242 4242 4242 4242</div>
+              </div>
+
+              <div class="field">
+                <label for="expiry">Expiry</label>
+                <input id="expiry" type="text" class="input" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" required />
+              </div>
+
+              <div class="field">
+                <label for="cvv">CVV</label>
+                <input id="cvv" type="password" class="input" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4" required />
+              </div>
+
+              <div class="field">
+                <label for="amount">Amount (USD)</label>
+                <input id="amount" type="number" class="input" min="1" step="1" value="60" />
+                <div class="help">Defaults to your selected duration ($1 per minute).</div>
+              </div>
+
+              <div class="form-actions" style="grid-column: 1 / -1; align-items: center; gap: 1rem;">
+                <button id="payBtn" type="submit" class="btn btn-primary">Verify & Authorize</button>
+                <div id="paymentMessage" class="muted" aria-live="polite"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="bookings" class="section section-compact">
       <div class="container">
         <h2 class="text-center">My lesson requests</h2>
