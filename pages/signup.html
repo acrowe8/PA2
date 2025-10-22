@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create your account — MaestroMatch</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <script src="../scripts/index.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container navbar" role="navigation" aria-label="Main">
+      <a class="brand" href="../index.html" aria-label="MaestroMatch home">
+        <span class="brand-mark" aria-hidden="true">🎵</span>
+        MaestroMatch
+      </a>
+      <div class="nav-actions">
+        <a href="./choose-role.html" class="btn btn-ghost">Already have an account? Sign in</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container" style="max-width: 760px;">
+        <div class="stack" style="text-align:center; margin-bottom: var(--space-6);">
+          <h1>Create your account</h1>
+          <p class="muted">Join as a student or a teacher. It only takes a minute.</p>
+        </div>
+
+        <div class="form-shell">
+          <form id="signupForm" class="stack" method="get">
+            <div class="form-grid cols-2">
+              <div class="field">
+                <label for="firstName">First name *</label>
+                <input class="input" type="text" id="firstName" name="firstName" autocomplete="given-name" required />
+              </div>
+              <div class="field">
+                <label for="lastName">Last name *</label>
+                <input class="input" type="text" id="lastName" name="lastName" autocomplete="family-name" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address *</label>
+              <input class="input" type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+
+            <div class="field">
+              <label for="password">Password (min 8 characters) *</label>
+              <input class="input" type="password" id="password" name="password" minlength="8" autocomplete="new-password" required />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" name="role" value="student" formaction="./student.html">Sign up as Student</button>
+              <button type="submit" class="btn" name="role" value="teacher" formaction="./teacher.html">Sign up as Teacher</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> MaestroMatch</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
