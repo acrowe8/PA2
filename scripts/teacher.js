@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Auth/session
+  const signOutBtn = document.getElementById('signOutBtn');
+  if (signOutBtn) {
+    signOutBtn.addEventListener('click', () => {
+      try { localStorage.removeItem('currentTeacherEmail'); } catch (e) {}
+      window.location.href = './pages/teachsignin.html';
+    });
+  }
+
   const currentEmail = (function () {
     try { return localStorage.getItem('currentTeacherEmail') || ''; } catch (e) { return ''; }
   })();
