@@ -132,13 +132,6 @@
                 <label for="cvv">CVV</label>
                 <input id="cvv" type="password" class="input" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4" required />
               </div>
-
-              <div class="field">
-                <label for="amount">Amount (USD)</label>
-                <input id="amount" type="number" class="input" min="1" step="1" value="60" />
-                <div class="help">Defaults to your selected duration ($1 per minute).</div>
-              </div>
-
               <div class="form-actions" style="grid-column: 1 / -1; align-items: center; gap: 1rem;">
                 <button id="payBtn" type="submit" class="btn btn-primary">Verify & Authorize</button>
                 <div id="paymentMessage" class="muted" aria-live="polite"></div>
