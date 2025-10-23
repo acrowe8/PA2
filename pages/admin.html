@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Home — MaestroMatch</title>
+  <link rel="stylesheet" href="../styles/main.css">
+  <script src="../scripts/admin.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container navbar" role="navigation" aria-label="Main">
+      <a class="brand" href="../index.html" aria-label="MaestroMatch home">
+        <span class="brand-mark" aria-hidden="true">🎵</span>
+        MaestroMatch
+      </a>
+      <nav class="nav-links">
+        <a href="#reports">Reports</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="adminSignOutBtn" class="btn btn-ghost" type="button">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section-compact">
+      <div class="container">
+        <div class="stack">
+          <h1>Welcome, <span id="adminWelcomeName">Admin</span></h1>
+          <p class="muted">View platform financial reports and highlights.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reports" class="section">
+      <div class="container">
+        <div class="stack">
+          <h2 class="form-title">Reports</h2>
+
+          <article class="card">
+            <div class="stack">
+              <div class="inline" style="justify-content: space-between; align-items: baseline;">
+                <h3>Revenue by Instrument Type</h3>
+                <small class="muted" id="report1LastUpdated"></small>
+              </div>
+              <div id="reportInstrumentSummary" class="stack"></div>
+              <div id="reportInstrumentHighlights" class="stack"></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="stack">
+              <div class="inline" style="justify-content: space-between; align-items: baseline;">
+                <h3>Revenue by Student</h3>
+                <small class="muted" id="report2LastUpdated"></small>
+              </div>
+              <div id="reportStudentSummary" class="stack"></div>
+              <div id="reportStudentHighlights" class="stack"></div>
+            </div>
+          </article>
+
+          <div class="inline">
+            <button id="refreshReportsBtn" class="btn btn-primary" type="button">Refresh reports</button>
+            <div id="reportsMessage" class="muted" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> MaestroMatch</div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

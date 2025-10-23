@@ -448,6 +448,34 @@ document.addEventListener('DOMContentLoaded', () => {
             at: new Date().toISOString()
           }));
         } catch (err) {}
+
+        // Record financial transaction to system records for Admin reports
+        try {
+          const txKey = 'financialTransactions';
+          const existing = (function(){ try { return JSON.parse(localStorage.getItem(txKey) || '[]'); } catch(e) { return []; } })();
+          // Best-effort instrument inference from current selection or profile
+          let instrumentForPayment = '';
+          try {
+            const instrEl = document.getElementById('instrument');
+            if (instrEl && instrEl.value) instrumentForPayment = instrEl.value;
+          } catch (e) {}
+          if (!instrumentForPayment) {
+            const prof = loadProfile();
+            instrumentForPayment = prof.instrument || 'Unknown';
+          }
+          const transaction = {
+            id: auth.authorizationId,
+            studentEmail: currentEmail || '',
+            instrument: instrumentForPayment,
+            amount: auth.amount,
+            currency: auth.currency || 'USD',
+            at: new Date().toISOString()
+          };
+          existing.push(transaction);
+          localStorage.setItem(txKey, JSON.stringify(existing));
+        } catch (err) {
+          // swallow; admin page can still function with prior records
+        }
       } catch (err) {
         const message = (err && err.message) ? err.message : 'Payment failed.';
         setPaymentMessage(message, true);
